@@ -1,0 +1,6 @@
+{
+  "sidebar": { "title": "AIChatFloat", "search": "Search prompts…", "empty": "No prompts yet" },
+  "actions": { "copy": "Copy", "insert": "Insert", "add": "Add prompt", "save": "Save", "delete": "Delete", "cancel": "Cancel" },
+  "export": { "title": "Export conversation", "markdown": "Markdown", "json": "JSON" },
+  "settings": { "title": "Settings", "language": "Language" }
+}
