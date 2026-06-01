@@ -36,6 +36,15 @@ describe('LocalPromptRepository', () => {
     expect((await repo.findAll())[0].title).toBe('B');
   });
 
+  it('updates only the targeted prompt, leaving others unchanged', async () => {
+    const a = await repo.create({ title: 'A', body: 'a' });
+    const b = await repo.create({ title: 'B', body: 'b' });
+    await repo.update(b.id, { title: 'B2' });
+    const all = await repo.findAll();
+    expect(all.find((p) => p.id === a.id)!.title).toBe('A');
+    expect(all.find((p) => p.id === b.id)!.title).toBe('B2');
+  });
+
   it('throws when updating a missing prompt', async () => {
     await expect(repo.update('nope', { title: 'x' })).rejects.toThrow('Prompt not found');
   });

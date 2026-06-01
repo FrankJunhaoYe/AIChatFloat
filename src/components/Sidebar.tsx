@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { browser } from 'wxt/browser';
 import type { SiteAdapter } from '@/features/sites/SiteAdapter';
 import { LocalPromptRepository, type PromptRepository } from '@/features/prompts/PromptRepository';
 import { usePrompts } from '@/features/prompts/usePrompts';
@@ -34,14 +35,22 @@ export function Sidebar({ adapter, repo = defaultRepo }: SidebarProps) {
   const [adding, setAdding] = useState(false);
   const [editing, setEditing] = useState<Prompt | null>(null);
 
+  // Toggle from the toolbar icon (background sends AICF_TOGGLE to the tab).
+  useEffect(() => {
+    const listener = (message: unknown): void => {
+      if (typeof message === 'object' && message !== null && (message as { type?: string }).type === 'AICF_TOGGLE') {
+        setOpen((value) => !value);
+      }
+    };
+    browser.runtime.onMessage.addListener(listener);
+    return () => browser.runtime.onMessage.removeListener(listener);
+  }, []);
+
   const closeEditor = () => { setAdding(false); setEditing(null); };
 
-  const handleCopy = async (prompt: Prompt) => {
-    try {
-      await navigator.clipboard.writeText(prompt.body);
-    } finally {
-      toast(t('toast.copied'));
-    }
+  const handleCopy = (prompt: Prompt) => {
+    navigator.clipboard?.writeText(prompt.body).catch(() => {});
+    toast(t('toast.copied'));
   };
 
   const handleInsert = (prompt: Prompt) => {

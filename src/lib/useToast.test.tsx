@@ -1,20 +1,41 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import { ToastProvider, useToast } from './useToast';
 
 function Probe() {
   const { toast } = useToast();
-  return <button onClick={() => toast('Saved!')}>go</button>;
+  return (
+    <button onClick={() => { toast('A'); toast('B'); }}>go</button>
+  );
 }
 
 describe('useToast', () => {
-  it('shows a toast message when triggered', () => {
+  it('shows each toast message when triggered', () => {
     render(
       <ToastProvider>
         <Probe />
       </ToastProvider>,
     );
     fireEvent.click(screen.getByText('go'));
-    expect(screen.getByText('Saved!')).toBeTruthy();
+    expect(screen.getByText('A')).toBeTruthy();
+    expect(screen.getByText('B')).toBeTruthy();
+  });
+
+  it('auto-dismisses toasts after the timeout', () => {
+    vi.useFakeTimers();
+    try {
+      render(
+        <ToastProvider>
+          <Probe />
+        </ToastProvider>,
+      );
+      fireEvent.click(screen.getByText('go'));
+      expect(screen.getByText('A')).toBeTruthy();
+      act(() => { vi.advanceTimersByTime(3000); });
+      expect(screen.queryByText('A')).toBeNull();
+      expect(screen.queryByText('B')).toBeNull();
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });

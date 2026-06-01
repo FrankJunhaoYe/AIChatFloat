@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { fakeBrowser } from 'wxt/testing';
 import { I18nProvider, useLanguage } from './I18nProvider';
-import { getItem } from '@/storage/storage';
+import { getItem, setItem } from '@/storage/storage';
 
 function Probe() {
   const { language, setLanguage } = useLanguage();
@@ -28,5 +28,15 @@ describe('I18nProvider', () => {
 
     await waitFor(() => expect(screen.getByTestId('lang').textContent).toBe('zh-CN'));
     expect(await getItem('lang', null)).toBe('zh-CN');
+  });
+
+  it('loads the persisted language on mount', async () => {
+    await setItem('lang', 'zh-CN');
+    render(
+      <I18nProvider>
+        <Probe />
+      </I18nProvider>,
+    );
+    await waitFor(() => expect(screen.getByTestId('lang').textContent).toBe('zh-CN'));
   });
 });
