@@ -1,0 +1,7 @@
+# Claude Code / AI agent working files — kept local, NOT published to GitHub
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+docs/superpowers/   # Claude planning/process scratch (plans, etc.) — kept local
+
+# (WXT scaffold will append standard Node/build ignores: node_modules, .output, .wxt, etc.)
