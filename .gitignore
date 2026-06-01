@@ -2,7 +2,8 @@
 CLAUDE.md
 CLAUDE.local.md
 .claude/
-docs/superpowers/   # Claude planning/process scratch (plans, etc.) — kept local
+# Claude planning/process scratch (plans, spec drafts) — kept local
+docs/superpowers/
 
 # Dependencies
 node_modules/
