@@ -4,4 +4,14 @@ CLAUDE.local.md
 .claude/
 docs/superpowers/   # Claude planning/process scratch (plans, etc.) — kept local
 
-# (WXT scaffold will append standard Node/build ignores: node_modules, .output, .wxt, etc.)
+# Dependencies
+node_modules/
+
+# WXT generated + build output
+.wxt/
+.output/
+stats.html
+
+# Logs / OS
+*.log
+.DS_Store
