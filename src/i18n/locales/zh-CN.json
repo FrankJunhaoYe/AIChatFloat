@@ -1,0 +1,6 @@
+{
+  "sidebar": { "title": "AIChatFloat", "search": "搜索提示词…", "empty": "还没有提示词" },
+  "actions": { "copy": "复制", "insert": "插入", "add": "新增提示词", "save": "保存", "delete": "删除", "cancel": "取消" },
+  "export": { "title": "导出对话", "markdown": "Markdown", "json": "JSON" },
+  "settings": { "title": "设置", "language": "语言" }
+}
