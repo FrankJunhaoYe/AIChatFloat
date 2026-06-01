@@ -1,6 +1,8 @@
 {
-  "sidebar": { "title": "AIChatFloat", "search": "Search prompts…", "empty": "No prompts yet" },
-  "actions": { "copy": "Copy", "insert": "Insert", "add": "Add prompt", "save": "Save", "delete": "Delete", "cancel": "Cancel" },
-  "export": { "title": "Export conversation", "markdown": "Markdown", "json": "JSON" },
-  "settings": { "title": "Settings", "language": "Language" }
+  "sidebar": { "title": "AIChatFloat", "search": "Search prompts…", "empty": "No prompts yet", "open": "Open AIChatFloat", "close": "Close" },
+  "actions": { "copy": "Copy", "insert": "Insert", "add": "Add prompt", "edit": "Edit", "save": "Save", "delete": "Delete", "cancel": "Cancel" },
+  "prompt": { "titlePlaceholder": "Title", "bodyPlaceholder": "Prompt text" },
+  "export": { "title": "Export conversation", "markdown": "Markdown", "json": "JSON", "empty": "No conversation to export" },
+  "settings": { "title": "Settings", "language": "Language" },
+  "toast": { "copied": "Copied to clipboard", "inserted": "Inserted into ChatGPT", "insertFailed": "Couldn't find the ChatGPT input" }
 }
