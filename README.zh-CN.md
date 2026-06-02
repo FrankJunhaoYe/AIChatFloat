@@ -48,6 +48,16 @@ npm run build
 3. 点击**加载已解压的扩展程序**，选择 `.output/chrome-mv3`。
 4. 打开 <https://chatgpt.com>，右下角会出现一个悬浮的 💬 按钮。
 
+### 浏览器支持
+
+| 浏览器 | 加载方式 |
+|---|---|
+| **Chrome** | `npm run build` → 加载 `.output/chrome-mv3`（即上面的步骤）。 |
+| **Edge** | 同一个 Chromium 包 —— `edge://extensions` → 开发者模式 → **加载解压缩的扩展** → `.output/chrome-mv3`（或 `npm run build:edge`）。 |
+| **Firefox** | `npm run build:firefox` → `about:debugging#/runtime/this-firefox` → **临时载入附加组件** → 选 `.output/firefox-mv2/manifest.json`。 |
+
+_Safari 需要 macOS + Xcode 转换，暂未打包。_
+
 ## 使用
 
 - 点 **💬** 打开面板。
