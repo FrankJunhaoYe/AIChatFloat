@@ -11,7 +11,7 @@ export function ExportPanel({ onExport }: ExportPanelProps) {
   const { t } = useTranslation();
   return (
     <div className="flex items-center gap-2">
-      <span className="text-xs text-neutral-500">{t('export.title')}</span>
+      <span className="whitespace-nowrap text-xs text-neutral-500">{t('export.title')}</span>
       <button type="button" className={BTN} onClick={() => onExport('md')}>{t('export.markdown')}</button>
       <button type="button" className={BTN} onClick={() => onExport('json')}>{t('export.json')}</button>
     </div>

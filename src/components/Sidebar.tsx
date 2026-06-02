@@ -81,7 +81,7 @@ export function Sidebar({ adapter, repo = defaultRepo }: SidebarProps) {
 
       {open && (
         <div
-          className={`fixed bottom-20 right-4 ${Z} flex max-h-[70vh] w-80 flex-col gap-2 overflow-hidden rounded-xl border border-black/10 bg-white p-3 text-neutral-900 shadow-2xl dark:border-white/15 dark:bg-neutral-900 dark:text-neutral-100`}
+          className={`fixed bottom-20 right-4 ${Z} flex max-h-[70vh] w-96 flex-col gap-2 overflow-hidden rounded-xl border border-black/10 bg-white p-3 text-neutral-900 shadow-2xl dark:border-white/15 dark:bg-neutral-900 dark:text-neutral-100`}
         >
           <div className="flex items-center justify-between">
             <span className="text-sm font-semibold">{t('sidebar.title')}</span>
@@ -127,7 +127,7 @@ export function Sidebar({ adapter, repo = defaultRepo }: SidebarProps) {
             />
           </div>
 
-          <div className="flex items-center justify-between gap-2 border-t border-black/5 pt-2 dark:border-white/10">
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-t border-black/5 pt-2 dark:border-white/10">
             <ExportPanel onExport={handleExport} />
             <Settings language={language} onChange={setLanguage} />
           </div>
