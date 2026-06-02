@@ -16,6 +16,16 @@ A floating sidebar for **chatgpt.com** that helps you manage prompts and export 
 - **Export** the current conversation as **Markdown** or **JSON**.
 - **Bilingual UI** — English / 中文, switchable in-app (defaults to your browser language).
 
+## Screenshots
+
+<img src="docs/screenshots/panel.png" alt="AIChatFloat panel" width="380" />
+
+Save, search, and manage prompts; one-click copy / insert; export the conversation as Markdown or JSON.
+
+<img src="docs/screenshots/insert-in-context.png" alt="Inserting a prompt into ChatGPT" width="820" />
+
+One click drops a saved prompt straight into the ChatGPT input box.
+
 ## Privacy
 
 AIChatFloat is **pure frontend**: no server, no account, no API keys, and it **never calls an AI API**. Your prompts live only in your browser's local storage (`chrome.storage.local`). The "AI" is the ChatGPT page you're already on.
