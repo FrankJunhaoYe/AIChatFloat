@@ -16,6 +16,16 @@
 - **导出**当前对话为 **Markdown** 或 **JSON**。
 - **双语界面** —— English / 中文，应用内可切换（默认跟随浏览器语言）。
 
+## 截图
+
+<img src="docs/screenshots/panel.png" alt="AIChatFloat 面板" width="380" />
+
+保存、搜索、管理提示词；一键复制 / 插入；将对话导出为 Markdown 或 JSON。
+
+<img src="docs/screenshots/insert-in-context.png" alt="一键插入提示词到 ChatGPT" width="820" />
+
+一键把提示词插入到 ChatGPT 输入框。
+
 ## 隐私
 
 AIChatFloat 是**纯前端**：无服务器、无账号、无 API 密钥，且**从不调用任何 AI 接口**。提示词只保存在浏览器本地存储（`chrome.storage.local`）。所谓“AI”就是你正在使用的 ChatGPT 页面本身。
