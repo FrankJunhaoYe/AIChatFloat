@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "AIChatFloat" },
+  "extDescription": {
+    "message": "A floating sidebar to save, search, and insert prompts, and export ChatGPT conversations as Markdown or JSON."
+  }
+}
