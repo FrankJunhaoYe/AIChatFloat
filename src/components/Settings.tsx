@@ -9,7 +9,7 @@ interface SettingsProps {
 export function Settings({ language, onChange }: SettingsProps) {
   const { t } = useTranslation();
   return (
-    <label className="flex items-center gap-2 text-xs text-neutral-500">
+    <label className="flex items-center gap-2 whitespace-nowrap text-xs text-neutral-500">
       {t('settings.language')}
       <select
         value={language}
