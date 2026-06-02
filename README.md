@@ -48,6 +48,16 @@ Then load the unpacked extension:
 3. Click **Load unpacked** and select `.output/chrome-mv3`.
 4. Open <https://chatgpt.com> — a floating 💬 button appears at the bottom-right.
 
+### Browser support
+
+| Browser | How to load |
+|---|---|
+| **Chrome** | `npm run build` → load `.output/chrome-mv3` (steps above). |
+| **Edge** | Same Chromium build — `edge://extensions` → Developer mode → **Load unpacked** → `.output/chrome-mv3` (or `npm run build:edge`). |
+| **Firefox** | `npm run build:firefox` → `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on…** → select `.output/firefox-mv2/manifest.json`. |
+
+_Safari requires macOS + Xcode to convert and is not packaged yet._
+
 ## Usage
 
 - Click the **💬** button to open the panel.
