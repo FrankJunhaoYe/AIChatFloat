@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "AIChatFloat" },
+  "extDescription": {
+    "message": "悬浮侧边栏：保存、搜索、一键插入提示词，并将 ChatGPT 对话导出为 Markdown 或 JSON。"
+  }
+}

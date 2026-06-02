@@ -16,6 +16,11 @@ stats.html
 # Test coverage reports
 coverage/
 
+# Playwright E2E artifacts
+test-results/
+playwright-report/
+.playwright/
+
 # Logs / OS
 *.log
 .DS_Store
