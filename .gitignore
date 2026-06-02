@@ -13,6 +13,9 @@ node_modules/
 .output/
 stats.html
 
+# Test coverage reports
+coverage/
+
 # Logs / OS
 *.log
 .DS_Store
