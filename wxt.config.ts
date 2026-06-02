@@ -17,6 +17,17 @@ export default defineConfig({
       128: 'icon/128.png',
     },
   },
+  hooks: {
+    // E2E build only: also inject into the local mock page so we never touch real chatgpt.com.
+    'build:manifestGenerated'(_wxt, manifest) {
+      if (!process.env.E2E) return;
+      for (const cs of manifest.content_scripts ?? []) {
+        if (cs.matches?.includes('*://chatgpt.com/*') && !cs.matches.includes('http://localhost/*')) {
+          cs.matches.push('http://localhost/*');
+        }
+      }
+    },
+  },
   vite: () => ({
     plugins: [tailwindcss()],
   }),
